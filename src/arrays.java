@@ -5,8 +5,9 @@ public class arrays {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		int userInput;
+		int userInput =0;
 		boolean cont = true;
+		int choice = 0;
 		String []name = new String[5];
 			name[0]= "Armani";
 			name[1]= "Kristen";
@@ -25,18 +26,31 @@ public class arrays {
 			city[2]= "Detroit";
 			city[3]= "Monroe";
 			city[4]= "Detroit";
+			System.out.println("Welcome!!");
 			
 			while(cont){
-		 System.out.println("Welcome! Pick a student! Enter 1-5");
+		 System.out.println("Pick a student! Enter 1-5");
 		 try{
-		 userInput= input.nextInt()-1;}
-		 catch(InputMismatchException e){
-				System.out.println("Thats an invalid prompt, please enter a valid answer! Try Again? Enter- (1)Yes/No");
-		 
+		 userInput= input.nextInt()-1;
+		 } catch(InputMismatchException e){
+				System.out.println("Thats an invalid prompt, please enter a valid answer! Try Again? Enter- (1) for Yes/(2) for No");
+				input.nextLine();
+				userInput= input.nextInt();
+		 }
+		 choice = input.nextInt();
+				if(choice==1){
+					cont = true;
+				}//end of if statement
+				else if(choice==2){
+					cont = false;
+					System.out.println("Goodbye!");
+				}//end of else if statement
+				else ()
+				
 		 System.out.println( "You Picked : " + name[userInput]);
 		 
 		 System.out.println("Choose what you want to know about " + name[userInput] + ":" + " Enter (1) Hometown or (2) Food");
-		 int choice = input.nextInt();
+		  choice = input.nextInt();
 		 if(choice==1){
 			 System.out.println(name[userInput] + "hometown is " + city[userInput]);
 			 
